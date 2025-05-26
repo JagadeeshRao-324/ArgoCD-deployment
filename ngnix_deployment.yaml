@@ -17,7 +17,7 @@ spec:
                service: ngnix-pod
        spec:
            containers:
-              - name: ngnix_app
+              - name: ngnix-app
                 image: ngnix:latest
                 ports:
                   - containerPort: 80
