@@ -14,7 +14,7 @@ spec:
        metadata:
            labels:
                app: ngnix
-               service: ngnix_pod
+               service: ngnix-pod
        spec:
            containers:
               - name: ngnix_app
