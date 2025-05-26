@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: ngnix_service
+    name: ngnix-service
     namespace: argocd
 spec:
     selector:
-        service: ngnix_pod
+        service: ngnix-pod
     ports:
       - port: 80
         targetPort: 80
