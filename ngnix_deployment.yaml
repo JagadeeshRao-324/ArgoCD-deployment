@@ -6,14 +6,14 @@ metadata:
     labels:
        app: ngnix
 spec:
-   replicas: 1
+   replicas: 3
    selector:
        matchLabels:
            app: ngnix
    template:
        metadata:
            labels:
-               app: ngnix:latest
+               app: ngnix:1.25.5
                service: ngnix-pod
        spec:
            containers:
