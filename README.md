@@ -94,3 +94,20 @@ Current configuration:
 
    - changed the replica count from 1 to 3
    - Image version from latest to 1.25.5
+
+             git add .
+             git commit -m "Updated the pod count and the image version"
+             git push
+     
+            ##Pod count increased to 3
+           controlplane:~$ kubectl get pods | grep -i ngnix
+           ngnix-fc459ffbd-7ls4d                               1/1     Running   0          13s
+           ngnix-fc459ffbd-bc28v                               1/1     Running   0          36s
+           ngnix-fc459ffbd-f52vs                               1/1     Running   0          22s
+
+           ##Image version changed from latest to 1.25.5
+           Events:
+              Type    Reason     Age   From               Message
+              ----    ------     ----  ----               -------
+              Normal  Scheduled  111s  default-scheduler  Successfully assigned argocd/ngnix-fc459ffbd-f52vs to node01
+              Normal  Pulling    111s  kubelet            Pulling image "nginx:1.25.5"
