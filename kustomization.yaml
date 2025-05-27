@@ -1,0 +1,4 @@
+# kustomization.yaml
+resources:
+  - ngnix_deployment.yaml
+  - ngnix_service.yml
