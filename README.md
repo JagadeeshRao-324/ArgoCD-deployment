@@ -8,8 +8,11 @@ Prerequisites:
 Implementation
 
 step1: Fork the git repo containing the neccessary yaml manifests to deploy the app to the local kubernetes node
+      
       # Clone your fork
+      
       git clone https://github.com/JagadeeshRao-324/ArgoCD-deployment.git
+      
       cd ArgoCD-deployment
 
 Step2: Install ArgoCD on the K8s cluster
