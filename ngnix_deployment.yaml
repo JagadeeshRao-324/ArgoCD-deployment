@@ -13,12 +13,12 @@ spec:
    template:
        metadata:
            labels:
-               app: ngnix:1.25.5
+               app: ngnix
                service: ngnix-pod
        spec:
            containers:
               - name: ngnix-app
-                image: nginx
+                image: nginx:1.25.5
                 ports:
                   - containerPort: 80
                 
