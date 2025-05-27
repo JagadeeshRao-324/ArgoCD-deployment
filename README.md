@@ -17,9 +17,10 @@ step1: Fork the git repo containing the neccessary yaml manifests to deploy the 
 
 Step2: Install ArgoCD on the K8s cluster
 
-- kubectl create namespace argocd
-# Install ArgoCD
-- kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+     kubectl create namespace argocd
+
+     kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+     
 - Login to the ArgoCD
       username: admin
       password: output of the below command
