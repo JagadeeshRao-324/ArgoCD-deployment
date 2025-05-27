@@ -80,3 +80,17 @@ step3: Create the ArgoCD Application resource using CLI or YAML.
 
         kubectl apply -f nginx-app.yaml
 
+Step4: Make changes in the ngnix yaml manifests. the changes will be automatically synced by the argoCD controller and reflected in the k8s environment
+
+Current configuration:
+
+           ##pod count = 1
+           controlplane:~/ArgoCD-deployment$ kubectl get pods | grep -i ngnix
+           ngnix-86d94f4645-s2vlk                              1/1     Running   0          5m8s
+
+           ##image version-- ngnix:latest
+
+  Example: change the number of replicas or the image version and commit the changes.
+
+   - changed the replica count from 1 to 3
+   - Image version from latest to 1.25.5
