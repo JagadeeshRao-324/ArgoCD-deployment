@@ -37,7 +37,9 @@ Step2: Install ArgoCD on the K8s cluster
 
 
 - Login to the ArgoCD
+
       username: admin
+  
       password: output of the below command
 
       kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo
