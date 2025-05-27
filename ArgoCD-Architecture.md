@@ -3,9 +3,7 @@ Architecture
 ![Image](https://github.com/user-attachments/assets/a47dad30-3e9a-42b1-92f4-a1322ff13c68)
 
 
-Absolutely! Here’s a detailed breakdown of all the **key components in Argo CD architecture**, along with their core **functionalities**. Understanding these will impress any interviewer and give you clarity on how Argo CD operates behind the scenes.
 
----
 
 ## 🧩 **Argo CD Architecture Overview**
 
