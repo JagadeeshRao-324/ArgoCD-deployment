@@ -20,7 +20,22 @@ Step2: Install ArgoCD on the K8s cluster
      kubectl create namespace argocd
 
      kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+     ##Expose the ArgoCD API server using port-forward, so we can start interacting with it:
      
+     kubectl port-forward svc/argocd-server -n argocd 8080:443
+
+     ##Install the ArgoCD CLI on the k8s cluster as it is a medium to interact with the ArgoCD API server
+
+     VERSION=$(curl --silent "https://api.github.com/repos/argoproj/argo-cd/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+     
+     curl -sSL -o argocd https://github.com/argoproj/argo-cd/releases/download/${VERSION}/argocd-linux-amd64
+
+     chmod +x argocd
+
+     sudo mv argocd /usr/local/bin/
+
+
 - Login to the ArgoCD
       username: admin
       password: output of the below command
