@@ -29,4 +29,38 @@ Step2: Install ArgoCD on the K8s cluster
       argocd login localhost:8080 --username admin --password password --insecure
 
 
-step3: 
+step3: Create the ArgoCD Application resource using CLI or YAML.
+
+   CLI:
+
+       argocd app create nginx-app \
+       --repo https://github.com/JagadeeshRao-324/ArgoCD-deployment.git \
+       --path . \
+       --dest-server https://kubernetes.default.svc \
+       --dest-namespace argocd \
+       --sync-policy automated
+   
+   YAML:
+
+       # nginx-app.yaml
+      apiVersion: argoproj.io/v1alpha1
+      kind: Application
+      metadata:
+         name: nginx-app
+         namespace: argocd
+      spec:
+         project: default
+         source:
+           repoURL: https://github.com/JagadeeshRao-324/ArgoCD-deployment.git
+           targetRevision: HEAD
+           path: nginx-app
+         destination:
+           server: https://kubernetes.default.svc
+           namespace: argocd
+         syncPolicy:
+           automated:
+             selfHeal: true
+             prune: true
+
+        kubectl apply -f nginx-app.yaml
+
