@@ -47,7 +47,7 @@ Step2: Install ArgoCD on the K8s cluster
       argocd login localhost:8080 --username admin --password password --insecure
 
 
-step3: Create the ArgoCD Application resource using CLI or YAML.
+step3: Create the ArgoCD Application resource using CLI or YAML. it will create a ngnix deployment and a ngnix service.
 
    CLI:
 
